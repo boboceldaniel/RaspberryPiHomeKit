@@ -4,3 +4,20 @@
 # STEP4: Update the Pi's default system packages
 sudo apt-get update
 sudo apt-get upgrade
+
+# STEP5: Install Node JS runtime
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# STEP6: Install Avahi and dependencies
+sudo apt-get install libavahi-compat-libdnssd-dev
+
+# STEP7: Install Homebridge and dependencies
+sudo npm install -g --unsafe-perm homebridge hap-nodejs node-gyp
+cd /usr/local/lib/node_modules/homebridge/
+sudo npm install --unsafe-perm bignum
+cd /usr/local/lib/node_modules/hap-nodejs/node_modules/mdns
+sudo node-gyp BUILDTYPE=Release rebuild
+
+# STEP8: Install Homebridge through NPM
+sudo npm install -g --unsafe-perm homebridge
