@@ -1,4 +1,4 @@
-# Place this file here /etc/default
+# Run `sudo nano /etc/default/homebridge` and write below to the file
 
 # Defaults / Configuration options for homebridge
 # The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
