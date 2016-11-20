@@ -1,4 +1,4 @@
-# Place this file here /var/homebridge/config.json
+# Run `sudo nano /var/homebridge/config.json` and write below to the opened file
 
 {
   "bridge": {
