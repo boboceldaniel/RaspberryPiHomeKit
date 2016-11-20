@@ -25,15 +25,23 @@ sudo npm install -g --unsafe-perm homebridge
 # From here, configuring the Homebridge to run every time the Pi starts.
 # In order to use the systemd service as is and run Homebridge on boot up, the following folders and user have to exist.
 
-# STEP9: Create the homebridge user
+# STEP9: Create a homebridge file under /etc/default 
+cd /etc/default
+#sudo nano homebridge
+
+# STEP10: Create a homebridge.service file under /etc/systemd/system
+cd /etc/systemd/system
+#sudo nano homebridge.service
+
+# STEP11: Create the homebridge user
 sudo useradd --system homebridge
 
-# STEP10: Create the directory /var/homebridge, writtable by the user above
+# STEP12: Create the directory /var/homebridge, writtable by the user above
 cd /var
 sudo mkdir homebridge
 sudo chown -R homebridge:homebridge /var/homebridge
 sudo chmod 777 -R /var/homebridge
 
-# STEP11: Create a config.json file in the above directory
+# STEP13: Create a config.json file in the above directory
 cd /var/homebridge
-sudo nano config.json
+#sudo nano config.json
