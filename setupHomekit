@@ -20,35 +20,38 @@ cd /usr/local/lib/node_modules/hap-nodejs/node_modules/mdns
 sudo node-gyp BUILDTYPE=Release rebuild
 
 # STEP8: Install Homebridge through NPM
-sudo npm install -g --unsafe-perm homebridge
+sudo npm install -g homebridge
+
+# STEP9: Install homebridge-pi accesory
+sudo npm install -g homebridge-pi
 
 # From here, configuring the Homebridge to run every time the Pi starts.
 # In order to use the systemd service as is and run Homebridge on boot up, the following folders and user have to exist.
 
-# STEP9: Create a homebridge file under /etc/default 
+# STEP10: Create a homebridge file under /etc/default 
 # sudo nano /etc/default/homebridge
 
-# STEP10: Create a homebridge.service file under /etc/systemd/system
+# STEP11: Create a homebridge.service file under /etc/systemd/system
 # sudo nano /etc/systemd/system/homebridge.service
 
-# STEP11: Create the homebridge user
+# STEP12: Create the homebridge user
 sudo useradd --system homebridge
 
-# STEP12: Create the directory /var/homebridge, writtable by the user above
+# STEP13: Create the directory /var/homebridge, writtable by the user above
 cd /var
 sudo mkdir homebridge
 sudo chown -R homebridge:homebridge /var/homebridge
 sudo chmod 777 -R /var/homebridge
 
-# STEP13: Create a config.json file in the above directory
+# STEP14: Create a config.json file in the above directory
 # sudo nano /var/homebridge/config.json
 
-# STEP14: Enable and run the service
+# STEP15: Enable and run the service
 systemctl daemon-reload
 systemctl enable homebridge
 systemctl start homebridge
 
-# STEP15: Check the status of the service
+# STEP16: Check the status of the service
 systemctl status homebridge
 
 
