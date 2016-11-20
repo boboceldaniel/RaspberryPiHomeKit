@@ -1,4 +1,4 @@
-# Place this file here /etc/systemd/system
+# Run `sudo nano /etc/systemd/system/homebridge.service` and write below to the opened file
 
 [Unit]
 Description=Node.js HomeKit Server 
