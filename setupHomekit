@@ -21,3 +21,19 @@ sudo node-gyp BUILDTYPE=Release rebuild
 
 # STEP8: Install Homebridge through NPM
 sudo npm install -g --unsafe-perm homebridge
+
+# From here, configuring the Homebridge to run every time the Pi starts.
+# In order to use the systemd service as is and run Homebridge on boot up, the following folders and user have to exist.
+
+# STEP9: Create the homebridge user
+sudo useradd --system homebridge
+
+# STEP10: Create the directory /var/homebridge, writtable by the user above
+cd /var
+sudo mkdir homebridge
+sudo chown -R homebridge:homebridge /var/homebridge
+sudo chmod 777 -R /var/homebridge
+
+# STEP11: Create a config.json file in the above directory
+cd /var/homebridge
+sudo nano config.json
