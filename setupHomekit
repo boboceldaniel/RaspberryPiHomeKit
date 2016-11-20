@@ -45,3 +45,14 @@ sudo chmod 777 -R /var/homebridge
 # STEP13: Create a config.json file in the above directory
 cd /var/homebridge
 #sudo nano config.json
+
+# STEP14: Enable and run the service
+systemctl daemon-reload
+systemctl enable homebridge
+systemctl start homebridge
+
+# STEP15: Check the status of the service
+systemctl status homebridge
+
+
+
