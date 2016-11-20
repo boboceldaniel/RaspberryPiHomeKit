@@ -26,12 +26,10 @@ sudo npm install -g --unsafe-perm homebridge
 # In order to use the systemd service as is and run Homebridge on boot up, the following folders and user have to exist.
 
 # STEP9: Create a homebridge file under /etc/default 
-cd /etc/default
-#sudo nano homebridge
+# sudo nano /etc/default/homebridge
 
 # STEP10: Create a homebridge.service file under /etc/systemd/system
-cd /etc/systemd/system
-#sudo nano homebridge.service
+# sudo nano /etc/systemd/system/homebridge.service
 
 # STEP11: Create the homebridge user
 sudo useradd --system homebridge
@@ -43,8 +41,7 @@ sudo chown -R homebridge:homebridge /var/homebridge
 sudo chmod 777 -R /var/homebridge
 
 # STEP13: Create a config.json file in the above directory
-cd /var/homebridge
-#sudo nano config.json
+# sudo nano /var/homebridge/config.json
 
 # STEP14: Enable and run the service
 systemctl daemon-reload
