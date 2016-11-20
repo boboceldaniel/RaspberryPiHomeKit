@@ -22,7 +22,7 @@ sudo node-gyp BUILDTYPE=Release rebuild
 # STEP8: Install Homebridge through NPM
 sudo npm install -g homebridge
 
-# STEP9: Install homebridge-pi accesory
+# STEP9: Install homebridge-pi accessory
 sudo npm install -g homebridge-pi
 
 # From here, configuring the Homebridge to run every time the Pi starts.
@@ -38,21 +38,20 @@ sudo npm install -g homebridge-pi
 sudo useradd --system homebridge
 
 # STEP13: Create the directory /var/homebridge, writtable by the user above
-cd /var
-sudo mkdir homebridge
-sudo chown -R homebridge:homebridge /var/homebridge
-sudo chmod 777 -R /var/homebridge
+# sudo mkdir /var/homebridge
+# sudo chown -R homebridge:homebridge /var/homebridge
+# sudo chmod 777 -R /var/homebridge
 
 # STEP14: Create a config.json file in the above directory
 # sudo nano /var/homebridge/config.json
 
-# STEP15: Enable and run the service
-systemctl daemon-reload
-systemctl enable homebridge
-systemctl start homebridge
+# STEP15: Enable and run the service manually
+# systemctl daemon-reload
+# systemctl enable homebridge
+# systemctl start homebridge
 
 # STEP16: Check the status of the service
-systemctl status homebridge
+# systemctl status homebridge
 
 
 
