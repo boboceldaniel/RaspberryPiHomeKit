@@ -1,2 +1,6 @@
+# Script file used to easily setup the homebridge server and have it run every time the Pi boots
+# Created by Daniel Bobocel
+
+# STEP4: Update the Pi's default system packages
 sudo apt-get update
 sudo apt-get upgrade
